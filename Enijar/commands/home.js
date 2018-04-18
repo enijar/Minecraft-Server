@@ -1,4 +1,4 @@
-var commando = require('../commando/commando').commando;
+var commando = require('../../commando/commando').commando;
 
 /**
  * Usage: /sethome {name}
