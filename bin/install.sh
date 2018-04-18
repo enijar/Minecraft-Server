@@ -15,7 +15,7 @@ echo "eula=true" > eula.txt
 curl -O https://scriptcraftjs.org/download/latest/scriptcraft-3.2.1/scriptcraft.jar
 
 # Move scriptcraft.jar to plugins directory
-mv plugins/scriptcraft.jar
+mv scriptcraft.jar plugins/
 
 # Copy build/plugins.js to ScriptCraft plugins
 cp build/plugins.js server/scriptcraft/plugins
