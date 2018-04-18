@@ -11,14 +11,15 @@ java -jar BuildTools.jar
 # Agree to EULA
 echo "eula=true" > eula.txt
 
-# Download ScriptCraft plugin
+# Install plugins
+cd plugins/
+
+# Scriptcraft
 curl -O https://scriptcraftjs.org/download/latest/scriptcraft-3.2.1/scriptcraft.jar
 
-# Move scriptcraft.jar to plugins directory
-mv scriptcraft.jar plugins/
-
-# Copy build/plugins.js to ScriptCraft plugins
-cp build/plugins.js server/scriptcraft/plugins
+# Scriptcraft
+curl -O https://dev.bukkit.org/projects/worldedit/files/latest
 
 # Restart Spigot server
+cd ../
 java -jar spigot-1.12.2.jar
