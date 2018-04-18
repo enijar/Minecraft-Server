@@ -1,4 +1,4 @@
-import {commando} from "../../server/scriptcraft/plugins/commando/commando";
+import {commando} from "commando";
 
 /**
  * Usage: /hi

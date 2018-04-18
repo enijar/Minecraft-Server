@@ -1,18 +1,11 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: './src/plugins.js',
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: path.join('js', 'plugins.js')
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
-            }
-        ]
-    }
+    plugins: [
+        new CopyWebpackPlugin([{
+            from: path.join(__dirname, 'src'),
+            to: 'build',
+        }])
+    ]
 };
