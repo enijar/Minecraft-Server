@@ -12,7 +12,10 @@ java -jar BuildTools.jar
 echo "eula=true" > eula.txt
 
 # Download ScriptCraft plugin
-curl -O plugins/scriptcraft.jar https://scriptcraftjs.org/download/latest/scriptcraft-3.2.1/scriptcraft.jar
+curl -O https://scriptcraftjs.org/download/latest/scriptcraft-3.2.1/scriptcraft.jar
+
+# Move scriptcraft.jar to plugins directory
+mv plugins/scriptcraft.jar
 
 # Copy build/plugins.js to ScriptCraft plugins
 cp build/plugins.js server/scriptcraft/plugins
