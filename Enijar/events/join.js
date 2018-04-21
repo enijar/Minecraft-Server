@@ -1,3 +1,4 @@
-events.playerJoin((event) => {
+events.playerJoin(event => {
     echo(event.player, `§6Welcome, ${event.player.name} to the Enijar server!`);
+    console.log(event. player.getlocation());
 });
