@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "npx babel Enijar/ --out-dir server/scriptcraft/plugins/Enijar --presets=es2015",
+    "build": "npx babel Enijar/ -d server/scriptcraft/plugins/Enijar --presets=es2015",
     "dev": "npx cpx \"Enijar/**/*.js\" server/scriptcraft/plugins/Enijar -w & npx babel server/scriptcraft/plugins/Enijar -w -d server/scriptcraft/plugins/Enijar --presets=es2015"
   },
   "devDependencies": {

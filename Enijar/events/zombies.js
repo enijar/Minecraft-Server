@@ -1,4 +1,4 @@
-const commando = require('../../commando/commando').commando;
+const {commando} = require('../../commando/commando');
 const bkBukkit = org.bukkit.Bukkit;
 const bkEntityType = org.bukkit.entity.EntityType;
 
