@@ -1,4 +1,6 @@
 const utils = require('../../../modules/utils');
+const inventory = require('../../../modules/inventory');
+const items = require('../../../modules/items');
 
 export default class Zombies {
     constructor(player, block) {
@@ -6,7 +8,7 @@ export default class Zombies {
         this.block = block;
         this.wave = 0;
         this.difficulty = 2;
-        this.maxWave = 2;
+        this.maxWave = 1;
         this.arena = {
             size: 13,
             center: {
@@ -27,6 +29,10 @@ export default class Zombies {
         this.block.setType(org.bukkit.Material.AIR);
 
         events.entityDeath(event => {
+            if (this.zombieIds.length === 0 && this.wave === this.maxWave) {
+                return;
+            }
+
             const index = this.zombieIds.indexOf(event.entity.getEntityId());
 
             if (index > -1) {
@@ -48,6 +54,8 @@ export default class Zombies {
 
     end() {
         org.bukkit.Bukkit.dispatchCommand(this.player, `title @a title [{"text":"Zombies Complete!","color":"gold"}]`);
+
+        inventory(this.player).add(items.cookie(64));
     }
 
     nextWave() {
