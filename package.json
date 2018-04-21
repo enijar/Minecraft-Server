@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "npx babel Enijar/ -d server/scriptcraft/plugins/Enijar --presets=es2015",
-    "dev": "npx cpx \"Enijar/**/*.js\" server/scriptcraft/plugins/Enijar -w -c \"npx babel --presets=es2015\" -c \"./bin/reload.sh\""
+    "dev": "npx cpx \"Enijar/**/*.js\" server/scriptcraft/plugins/Enijar -w -c \"npx babel --presets=es2015\""
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
