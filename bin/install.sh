@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Install OS dependencies
+sudo apt-get update
+sudo apt-get install default-jre default-jdk -y
+
 cd server/
 
 # Download Spigot build tools
