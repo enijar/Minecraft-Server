@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "build": "node_modules/.bin/gulp",
-    "dev": "node_modules/.bin/gulp watch"
+    "build": "npx babel Enijar/ --out-dir server/scriptcraft/plugins/Enijar --presets=es2015",
+    "dev": "npx babel Enijar/ --watch --out-dir server/scriptcraft/plugins/Enijar --presets=es2015"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-directory-sync": "^1.2.3"
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
   }
 }
