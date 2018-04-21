@@ -1,22 +1,24 @@
-const {commando} = require('../../commando/commando');
-const bkBukkit = org.bukkit.Bukkit;
-const bkEntityType = org.bukkit.entity.EntityType;
+import Zombies from "../Games/Zombies";
 
-const game = {
-    wave: 1,
-    zombies: 5
+const ZOMBIE_GAME_BLOCK = {
+    x: 78,
+    y: 66,
+    z: -64
 };
 
-commando('hi', (args, player) => {
-    echo(player, `Hi ${player.name}!`);
+events.blockDamage(event => {
+    const block = event.getBlock();
 
-    // Send title to player
-    bkBukkit.dispatchCommand(server.consoleSender, `title @a title [{"text":"Wave ${game.wave}","color":"gold"}]`);
-
-    // Spawn zombies
-    for (let i = 0 ; i < game.zombies * game.wave; i++) {
-        player.location.world.spawnEntity(player.location, bkEntityType.ZOMBIE);
+    if (!(
+            block.x === ZOMBIE_GAME_BLOCK.x &&
+            block.y === ZOMBIE_GAME_BLOCK.y &&
+            block.z === ZOMBIE_GAME_BLOCK.z)
+    ) {
+        return;
     }
 
-    game.wave++;
+    const player = event.getPlayer();
+    const zombies = new Zombies(player, block);
+
+    zombies.start();
 });
